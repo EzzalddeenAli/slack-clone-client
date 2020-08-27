@@ -10,7 +10,7 @@ import { split } from 'apollo-link';
 import { WebSocketLink } from 'apollo-link-ws';
 import { getMainDefinition } from 'apollo-utilities';
 
-const httpLink = createHttpLink({ uri: 'http://localhost:4000/graphql' });
+const httpLink = createHttpLink({ uri: 'https://slack-clone-server.vercel.app/graphql' });
 
 const middlewareLink = setContext(() => ({
   headers: {
