@@ -21,10 +21,11 @@ const middlewareLink = setContext(() => ({
 const httpLinkWithMiddleware = middlewareLink.concat(httpLink);
 
 const wsLink = new WebSocketLink({
-  uri: 'wss://slack-clone-server.vercel.app/graphql',
+  uri: 'wss://slack-clone-server.vercel.app/',
   options: {
     reconnect: true,
   },
+  
 });
 
 const link = split(
