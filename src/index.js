@@ -23,7 +23,7 @@ const httpLinkWithMiddleware = middlewareLink.concat(httpLink);
 
 const wsLink = new WebSocketLink(new SubscriptionClient('wss://slack-clone-server.vercel.app/graphql', {
     reconnect: true,
-    timeout:3000
+    timeout:30000
 }));
 
 const link = split(
