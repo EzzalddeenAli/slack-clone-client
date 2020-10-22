@@ -11,7 +11,7 @@ import { WebSocketLink } from 'apollo-link-ws';
 import { SubscriptionClient } from "subscriptions-transport-ws";
 import { getMainDefinition } from 'apollo-utilities';
 
-const httpLink = createHttpLink({ uri: 'https://slack-clone-client-2en2u2nvg.vercel.app/graphql' });
+const httpLink = createHttpLink({ uri: 'https://slack-clone-client-2en2u2nvg.vercel.app' });
 
 const middlewareLink = setContext(() => ({
   headers: {
@@ -21,7 +21,7 @@ const middlewareLink = setContext(() => ({
 
 const httpLinkWithMiddleware = middlewareLink.concat(httpLink);
 
-const wsLink = new WebSocketLink(new SubscriptionClient('ws://slack-clone-client-2en2u2nvg.vercel.app/graphql', {
+const wsLink = new WebSocketLink(new SubscriptionClient('ws://slack-clone-client-2en2u2nvg.vercel.app', {
     reconnect: true,
     timeout:30000
 }));
